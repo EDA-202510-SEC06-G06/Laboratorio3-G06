@@ -14,7 +14,7 @@ def compare_from_tests(element1, element2):
     return -1
 
 
-@handle_not_implemented
+
 def test_new_list():
     lista = setup_tests()
 
