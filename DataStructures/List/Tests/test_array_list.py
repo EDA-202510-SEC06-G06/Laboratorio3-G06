@@ -41,7 +41,7 @@ def test_add_first():
     assert type(lista["size"]) == int
 
 
-@handle_not_implemented
+
 def test_add_last():
     lista = setup_tests()
 
