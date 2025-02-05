@@ -185,3 +185,11 @@ def new_list():
     }
     return newlist
 
+
+def new_list():
+    newlist = {
+        'elements': [],
+        'size': 0,
+    }
+    return newlist
+
