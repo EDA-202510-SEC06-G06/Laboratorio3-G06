@@ -72,3 +72,11 @@ def first_element(my_list):
     
     
     
+
+def new_list():
+    newlist = {
+        'elements': [],
+        'size': 0,
+    }
+    return newlist
+
