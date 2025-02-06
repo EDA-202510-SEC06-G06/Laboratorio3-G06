@@ -63,7 +63,7 @@ def first_element(my_list):
         
         return my_list["elements"][size(my_list) - 1]
     
-#Que Bola, Pedro (yo) trabajó en main jijij
+#Otra modificación basura
         
  
     
