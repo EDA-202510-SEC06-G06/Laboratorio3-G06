@@ -78,3 +78,11 @@ def remove_last(my_list):
     else:
         my_list["size"] -= 1
     return my_list["last"]["info"]
+def size(new_list):
+    return new_list['size']
+
+def first_element(my_list):
+    return my_list['first']['info']
+
+        
+    
