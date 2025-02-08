@@ -163,6 +163,12 @@ def new_list():
     }
     return newlist
 
+def is_empty(my_list):
+    if len(my_list) == 0:
+        return True
+    else:
+        return False
+    
 def get_element(my_list, pos):
     searchpos = 0
     node = my_list["first"]
@@ -210,3 +216,9 @@ def add_last(my_list, element):
         my_list["last"] = node
     return my_list
 
+def last_element(my_list):
+    if is_empty(my_list):
+        raise Exception("IndexError: list index out of range")
+    else:
+        return my_list["last"]["info"]
+    
