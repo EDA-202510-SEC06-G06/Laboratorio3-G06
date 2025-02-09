@@ -48,14 +48,14 @@ def add_first(my_list, element):
     return my_list
 
 def add_last(my_list, element):
+    node= {"info": element, "next": None}
     if is_empty(my_list):
-        node= {"info": element, "next": None}
         my_list["first"] = node
         my_list["size"] += 1
         my_list["last"] = node
     else:
-        node= {"info": element, "next": None}
         my_list["size"] += 1
+        my_list["last"]["next"]= node
         my_list["last"] = node
     return my_list
 
@@ -65,3 +65,16 @@ def last_element(my_list):
     else:
         return my_list["last"]["info"]
     
+def remove_first(my_list):
+    if is_empty(my_list):
+        raise Exception("IndexError: list index out of range")
+    else:
+        my_list["size"] -= 1
+    return my_list["first"]["info"]
+
+def remove_last(my_list):
+    if is_empty(my_list):
+        raise Exception("IndexError: list index out of range")
+    else:
+        my_list["size"] -= 1
+    return my_list["last"]["info"]
