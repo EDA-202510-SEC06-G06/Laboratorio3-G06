@@ -90,7 +90,7 @@ def delete_element(my_list, pos):
 
     if pos == 0: # caso de eliminar el primer nodo de la lista
         my_list['first'] = my_list['first']['next'] #cambiar first para que apunte al nodo consecutivo (2ndo nodo)
-        if my_list['size'] = 1: # si unicamente el tamaño de la lista era ese unico nodo (1 nodo), ponemos que el apuntador del ultimo valor es nulo (no existe) por lo tanto la lista no tiene mas nodos.
+        if my_list['size'] == 1: # si unicamente el tamaño de la lista era ese unico nodo (1 nodo), ponemos que el apuntador del ultimo valor es nulo (no existe) por lo tanto la lista no tiene mas nodos.
             my_list['last'] = None
     else:
         ant = my_list['first'] #definimos anterior como el primer nodo de la lista
@@ -103,18 +103,18 @@ def delete_element(my_list, pos):
     my_list['size'] -= 1 #actualizar el tamaño de la lista
     return my_list # y listo =)
     
-def change_info(my_list, pos, new_info)
+def change_info(my_list, pos, new_info):
     if pos < 0 or pos >= size(my_list):
         raise Exception('IndexError: list index out of range')
     
     nodo = my_list['first'] #inicio nodo en la primera posicion
-    for i in range(pos) #recorro hasta pos
+    for i in range(pos): #recorro hasta pos
         nodo= nodo['next'] 
-    nodo['info'] == new_info #actualizo la informacion
+    nodo['info'] = new_info #actualizo la informacion
     return my_list #retorno
 
 def exchange(my_list, pos_1, pos_2):
-    if pos_1 < o or pos_1 >= size(my_list) or if pos_2 < o or pos_2 >= size(my_list):
+    if pos_1 < 0 or pos_1 >= size(my_list) or pos_2 < 0 or pos_2 >= size(my_list):
         raise Exception('IndexError: list index out of range')
     
     nodo1 = my_list['first'] # primera posicion
@@ -124,10 +124,25 @@ def exchange(my_list, pos_1, pos_2):
     for w in range(pos_2):
         nodo2 = nodo2['next']
         
-    nodo1['info'], nodo2['info'] == nodo2['info'], nodo1['info'] # intercambio a la vez los dos valores
+    nodo1['info'], nodo2['info'] = nodo2['info'], nodo1['info'] # intercambio a la vez los dos valores
     return my_list
     
         
+def sub_list(my_list, pos, num_elements):
+    if pos < 0 or pos >= size(my_list):
+        raise Exception('IndexError: list index out of range')
+
+    posicion = my_list['first']
+    for z in range(pos):
+        posicion = posicion['next']
+    x=0
+    lista = new_list()
+    
+    while posicion is not None and x < num_elements:
+        add_last(lista, posicion['info'])
+        posicion = posicion['next']
+        x += 1
+    return lista
 
         
 
