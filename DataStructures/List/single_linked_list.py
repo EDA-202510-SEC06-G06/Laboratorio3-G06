@@ -1,3 +1,87 @@
+def new_list():
+    newlist = {
+        "first": None,
+        "last": None,
+        "size": 0,
+    }
+    return newlist
+
+def is_empty(my_list):
+    if len(my_list) == 0:
+        return True
+    else:
+        return False
+    
+def get_element(my_list, pos):
+    searchpos = 0
+    node = my_list["first"]
+    while searchpos < pos:
+        node = node["next"]
+        searchpos += 1
+    return node["info"]
+
+def is_present(my_list, element, cmp_function):
+    is_in_array = False
+    temp = my_list["first"]
+    count = 0
+    while not is_in_array and temp is not None:
+        if cmp_function(element, temp["info"]) == 0:
+            is_in_array = True
+        else:
+            temp = temp["next"]
+            count += 1
+            
+    if not is_in_array:
+        count = -1
+    return count
+
+def add_first(my_list, element):
+    if is_empty(my_list):
+        node= {"info": element, "next": None}
+        my_list["first"] = node
+        my_list["size"] += 1
+        my_list["last"] = node
+    else:
+        node= {"info": element, "next": my_list["first"]}
+        my_list["first"] = node
+        my_list["size"] += 1
+    return my_list
+
+def add_last(my_list, element):
+    node= {"info": element, "next": None}
+    if is_empty(my_list):
+        my_list["first"] = node
+        my_list["size"] += 1
+        my_list["last"] = node
+    else:
+        my_list["size"] += 1
+        my_list["last"]["next"]= node
+        my_list["last"] = node
+    return my_list
+
+def last_element(my_list):
+    if is_empty(my_list):
+        raise Exception("IndexError: list index out of range")
+    else:
+        return my_list["last"]["info"]
+    
+def remove_first(my_list):
+    if is_empty(my_list):
+        raise Exception("IndexError: list index out of range")
+    else:
+        my_list["size"] -= 1
+    return my_list["first"]["info"]
+
+def remove_last(my_list):
+    if is_empty(my_list):
+        raise Exception("IndexError: list index out of range")
+    else:
+        my_list["size"] -= 1
+    return my_list["last"]["info"]
+
+
+
+
 def size(new_list):
     return new_list['size'] #retorno el valor que este en size
 
@@ -63,6 +147,32 @@ def sub_list(my_list, pos, num_elements):
         posicion = posicion['next']
         x += 1
     return lista
+
+def insert_element(my_list, element, pos):
+    if pos < 0 or pos >= size(my_list):
+        raise Exception('IndexError: list index out of range')
+    
+    nodo_nuevo= {'info':element, 'next': None}
+    if pos == 0:
+        nodo_nuevo['next']= my_list['first']
+    my_list['first'] = nodo_nuevo
+    
+    if my_list['size'] == 0:
+        my_list['last'] = nodo_nuevo
+    else:
+        anterior = my_list['first']
+        for y in range(pos-1):
+            anterior = anterior['next']
+        
+        nodo_nuevo['next'] = anterior['next']
+        anterior['next'] = nodo_nuevo
+
+    my_list['size'] +=1
+    return my_list
+        
+        
+            
+
 
         
 
