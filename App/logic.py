@@ -149,8 +149,16 @@ def count_books_by_tag(catalog, tag):
     :return: El número de libros que fueron etiquetados con el tag dado
     """
     # TODO Implementar la función de conteo de libros por tag
-    pass
-
+    
+    counter = 0
+    for i in range (0, lt.size(catalog["book_tags"])):
+        
+        if lt.get_element(catalog["book_tags"], i) == tag:
+            
+            counter += 1
+            
+    return counter
+    
 
 # Funciones para agregar informacion al catalogo
 
@@ -233,43 +241,24 @@ def new_book_tag(tag_id, book_id):
 
 
 def book_size(catalog):
-    return lt.size(catalog['books'])
+    
+    return catalog["book"]["size"]
 
 
 def author_size(catalog):
-    """
-    Retorna el número de autores en el catálogo
 
-    :param catalog: El catalogo de estructuras del laboratorio
-
-    :return: El número de autores en el catálogo
-    """
-    # TODO Implementar la función de tamaño de autores
-    pass
+    return catalog["author"]["size"]
 
 
 def tag_size(catalog):
-    """
-    Retorna el número de tags en el catálogo
-
-    :param catalog: El catalogo de estructuras del laboratorio
-
-    :return: El número de tags en el catálogo
-    """
-    # TODO Implementar la función de tamaño de tags
-    pass
+   
+    return catalog["tags"]["size"]
+    
 
 
 def book_tag_size(catalog):
-    """
-    Retorna el número de book_tags en el catálogo
 
-    :param catalog: El catalogo de estructuras del laboratorio
-
-    :return: El número de book_tags en el catálogo
-    """
-    # TODO Implementar la función de tamaño de book_tags
-    pass
+    return catalog["book_tags"]["size"]
 
 
 # Funciones utilizadas para comparar elementos dentro de una lista
