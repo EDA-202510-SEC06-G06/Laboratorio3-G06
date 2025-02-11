@@ -277,6 +277,7 @@ def book_tag_size(catalog):
 
 
 def compare_authors(author_name1, author):
+    
     if author_name1.lower() == author['name'].lower():
         return 0
     elif author_name1.lower() > author['name'].lower():
@@ -285,6 +286,7 @@ def compare_authors(author_name1, author):
 
 
 def compare_tag_names(name, tag):
+    
     if (name == tag['name']):
         return 0
     elif (name > tag['name']):
@@ -295,4 +297,5 @@ def compare_tag_names(name, tag):
 # funciones para comparar elementos dentro de algoritmos de ordenamientos
 
 def compare_ratings(book1, book2):
+    
     return (float(book1['average_rating']) > float(book2['average_rating']))
