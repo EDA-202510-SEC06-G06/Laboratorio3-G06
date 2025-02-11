@@ -70,11 +70,15 @@ def load_data(catalog):
     estructura de datos
     """
    
+   
     # TODO Complete la carga de los tags
+   tags = load_tags(catalog, "GoodReads/tags-medium.csv")
    tags = load_tags(catalog, "GoodReads/tags-medium.csv")
     # TODO Complete la carga de los book_tags
     book_tags = load_books_tags(catalog, "GoodReads/book_tags-medium.csv")
+   book_tags = load_books_tags(catalog, "GoodReads/book_tags-medium.csv")
     # TODO Añada
+    return books, authors, tags, book_tags
     return books, authors, tags, book_tags
     # pass
 
@@ -108,6 +112,14 @@ def load_tags(catalog):
         add_tag(catalog, tag)
     return tag_size(catalog)
 
+    
+    tags_file = data_dir + "GoodReads/tags-medium.csv"
+    inputfile = csv.DictReader(open(tags_file, encoding="utf-8"))
+    
+    for tag in inputfile:
+        add_tag(catalog, tag)
+    return tag_size(catalog)
+
 
 
 def load_books_tags(catalog):
@@ -118,6 +130,15 @@ def load_books_tags(catalog):
 
     :return: El número de book_tags cargados
     """
+    
+    book_tags_file = data_dir + "GoodReads/book_tags-medium.csv"  
+    inputfile = csv.DictReader(open(book_tags_file, encoding="utf-8" ))
+
+    for book_tag in inputfile:
+        add_book_tag(catalog, book_tag)  
+
+
+    return book_tag_size(catalog)
     
     book_tags_file = data_dir + "GoodReads/book_tags-medium.csv"  
     inputfile = csv.DictReader(open(book_tags_file, encoding="utf-8" ))
