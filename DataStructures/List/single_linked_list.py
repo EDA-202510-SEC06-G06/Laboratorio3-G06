@@ -214,10 +214,7 @@ def add_last(my_list, element):
         my_list["size"] += 1
         my_list["last"]["next"]= node
         my_list["last"] = node
-    else:
-        my_list["size"] += 1
-        my_list["last"]["next"]= node
-        my_list["last"] = node
+        
     return my_list
 
 def last_element(my_list):
