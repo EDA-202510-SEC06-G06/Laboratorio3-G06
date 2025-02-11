@@ -113,7 +113,6 @@ def load_books_tags(catalog):
     # TODO Implementar la carga de los book_tags
     pass
 
-
 # Funciones de consulta sobre el catálogo
 
 def get_books_by_author(catalog, author_name):

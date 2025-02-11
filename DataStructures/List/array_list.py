@@ -177,3 +177,19 @@ def exchange(my_list, pos_1, pos_2):
     
     
     
+
+def new_list():
+    newlist = {
+        'elements': [],
+        'size': 0,
+    }
+    return newlist
+
+
+def new_list():
+    newlist = {
+        'elements': [],
+        'size': 0,
+    }
+    return newlist
+
