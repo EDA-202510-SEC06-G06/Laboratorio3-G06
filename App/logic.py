@@ -73,12 +73,11 @@ def load_data(catalog):
    
     # TODO Complete la carga de los tags
    tags = load_tags(catalog, "GoodReads/tags-medium.csv")
-   tags = load_tags(catalog, "GoodReads/tags-medium.csv")
+
     # TODO Complete la carga de los book_tags
     book_tags = load_books_tags(catalog, "GoodReads/book_tags-medium.csv")
-   book_tags = load_books_tags(catalog, "GoodReads/book_tags-medium.csv")
+   
     # TODO Añada
-    return books, authors, tags, book_tags
     return books, authors, tags, book_tags
     # pass
 
