@@ -101,6 +101,15 @@ def load_tags(catalog):
     # TODO Implementar la carga de los tags
     pass
 
+    
+    tags_file = data_dir + "GoodReads/tags-medium.csv"
+    inputfile = csv.DictReader(open(tags_file, encoding="utf-8"))
+    
+    for tag in inputfile:
+        add_tag(catalog, tag)
+    return tag_size(catalog)
+
+
 
 def load_books_tags(catalog):
     """
@@ -112,6 +121,14 @@ def load_books_tags(catalog):
     """
     # TODO Implementar la carga de los book_tags
     pass
+    
+    book_tags_file = data_dir + "GoodReads/book_tags-medium.csv"  
+    inputfile = csv.DictReader(open(book_tags_file, encoding="utf-8" ))
+
+    for book_tag in inputfile:
+        add_book_tag(catalog, book_tag)  
+
+
 
 # Funciones de consulta sobre el catálogo
 
