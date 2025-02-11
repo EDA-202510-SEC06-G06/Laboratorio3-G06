@@ -69,16 +69,11 @@ def load_data(catalog):
     Carga los datos de los archivos y cargar los datos en la
     estructura de datos
     """
-   
-   
+    books, authors = load_books(catalog)
     # TODO Complete la carga de los tags
-    tags = load_tags(catalog, "GoodReads/tags-medium.csv")
-
     # TODO Complete la carga de los book_tags
-    book_tags = load_books_tags(catalog, "GoodReads/book_tags-medium.csv")
-   
     # TODO Añada
-    return books, authors, tags, book_tags
+    return books, authors
     # pass
 
 
@@ -103,6 +98,9 @@ def load_tags(catalog):
 
     :return: El número de tags cargados
     """
+    # TODO Implementar la carga de los tags
+    pass
+
     
     tags_file = data_dir + "GoodReads/tags-medium.csv"
     inputfile = csv.DictReader(open(tags_file, encoding="utf-8"))
@@ -121,6 +119,8 @@ def load_books_tags(catalog):
 
     :return: El número de book_tags cargados
     """
+    # TODO Implementar la carga de los book_tags
+    pass
     
     book_tags_file = data_dir + "GoodReads/book_tags-medium.csv"  
     inputfile = csv.DictReader(open(book_tags_file, encoding="utf-8" ))
@@ -293,6 +293,7 @@ def book_tag_size(catalog):
 
 
 def compare_authors(author_name1, author):
+    
     if author_name1.lower() == author['name'].lower():
         return 0
     elif author_name1.lower() > author['name'].lower():
@@ -301,6 +302,7 @@ def compare_authors(author_name1, author):
 
 
 def compare_tag_names(name, tag):
+    
     if (name == tag['name']):
         return 0
     elif (name > tag['name']):
@@ -311,4 +313,5 @@ def compare_tag_names(name, tag):
 # funciones para comparar elementos dentro de algoritmos de ordenamientos
 
 def compare_ratings(book1, book2):
+    
     return (float(book1['average_rating']) > float(book2['average_rating']))

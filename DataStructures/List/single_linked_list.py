@@ -7,7 +7,8 @@ def new_list():
     return newlist
 
 def is_empty(my_list):
-    if len(my_list) == 0:
+    
+    if my_list["size"] == 0:
         return True
     else:
         return False
@@ -36,19 +37,23 @@ def is_present(my_list, element, cmp_function):
     return count
 
 def add_first(my_list, element):
+    
     if is_empty(my_list):
         node= {"info": element, "next": None}
         my_list["first"] = node
         my_list["size"] += 1
         my_list["last"] = node
+        
     else:
         node= {"info": element, "next": my_list["first"]}
         my_list["first"] = node
         my_list["size"] += 1
+        
     return my_list
 
 def add_last(my_list, element):
     node= {"info": element, "next": None}
+    
     if is_empty(my_list):
         my_list["first"] = node
         my_list["size"] += 1
@@ -144,31 +149,7 @@ def sub_list(my_list, pos, num_elements):
         x += 1
     return lista
 
-        
 
-
-
-
-
-    
-
-
-        
-    
-def new_list():
-    newlist = {
-        "first": None,
-        "last": None,
-        "size": 0,
-    }
-    return newlist
-
-def is_empty(my_list):
-    if len(my_list) == 0:
-        return True
-    else:
-        return False
-    
 def get_element(my_list, pos):
     searchpos = 0
     node = my_list["first"]

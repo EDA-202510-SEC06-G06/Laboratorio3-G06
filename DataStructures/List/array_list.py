@@ -163,20 +163,7 @@ def exchange(my_list, pos_1, pos_2):
         my_list["elements"][pos_1] = my_list["elements"][pos_2]
         my_list["elements"][pos_2] = temp
         return my_list
-    
-
-        
-    
-    
-    
-      
- 
-    
-    
-    
-    
-    
-    
+     
 
 def new_list():
     newlist = {
