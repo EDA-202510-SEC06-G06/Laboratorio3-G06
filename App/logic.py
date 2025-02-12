@@ -73,7 +73,13 @@ def load_data(catalog):
     # TODO Complete la carga de los tags
     # TODO Complete la carga de los book_tags
     # TODO Añada
-    return books, authors
+    
+      
+    books, authors = load_books(catalog)
+    tags = load_tags(catalog)
+    book_tags = load_books_tags(catalog)
+
+    return books, authors, tags, book_tags
     # pass
 
 
