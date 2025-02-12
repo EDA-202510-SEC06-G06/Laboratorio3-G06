@@ -173,7 +173,7 @@ def insert_element(my_list, element, pos):
     
     
     def new_list():
-    newlist = {
+     newlist = {
         "first": None,
         "last": None,
         "size": 0,
