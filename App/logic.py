@@ -153,16 +153,7 @@ def get_best_book(catalog):
     :return: El libro con el mejor rating
     """
     # TODO Implementar la función del mejor libro por rating
-    
-    best_book = lt.get_element(catalog["books"], 0)
-    
-    for i in range (0, lt.size(catalog["books"] - 1)):
-        
-        if not compare_ratings(lt.get_element(catalog["books"], i), lt.get_element(catalog["books"], i + 1)):
-            
-            best_book = lt.get_element(catalog["books"], i + 1)
-    
-    return best_book
+    return None
 
 
 def count_books_by_tag(catalog, tag):
@@ -175,16 +166,8 @@ def count_books_by_tag(catalog, tag):
     :return: El número de libros que fueron etiquetados con el tag dado
     """
     # TODO Implementar la función de conteo de libros por tag
-    
-    counter = 0
-    for i in range (0, lt.size(catalog["book_tags"])):
-        
-        if lt.get_element(catalog["book_tags"], i) == tag:
-            
-            counter += 1
-            
-    return counter
-    
+    pass
+
 
 # Funciones para agregar informacion al catalogo
 
@@ -267,24 +250,43 @@ def new_book_tag(tag_id, book_id):
 
 
 def book_size(catalog):
-    
-    return catalog["book"]["size"]
+    return lt.size(catalog['books'])
 
 
 def author_size(catalog):
+    """
+    Retorna el número de autores en el catálogo
 
-    return catalog["author"]["size"]
+    :param catalog: El catalogo de estructuras del laboratorio
+
+    :return: El número de autores en el catálogo
+    """
+    # TODO Implementar la función de tamaño de autores
+    pass
 
 
 def tag_size(catalog):
-   
-    return catalog["tags"]["size"]
-    
+    """
+    Retorna el número de tags en el catálogo
+
+    :param catalog: El catalogo de estructuras del laboratorio
+
+    :return: El número de tags en el catálogo
+    """
+    # TODO Implementar la función de tamaño de tags
+    pass
 
 
 def book_tag_size(catalog):
+    """
+    Retorna el número de book_tags en el catálogo
 
-    return catalog["book_tags"]["size"]
+    :param catalog: El catalogo de estructuras del laboratorio
+
+    :return: El número de book_tags en el catálogo
+    """
+    # TODO Implementar la función de tamaño de book_tags
+    pass
 
 
 # Funciones utilizadas para comparar elementos dentro de una lista
