@@ -1,13 +1,14 @@
-
 def new_list():
     
     array = {"size": 0, "elements" :[]}
     
     return array
+   
     
 def get_element(my_list, index):
     
     return my_list["elements"][index]
+
 
 def is_present(my_list,  element, cmp_function):
     
@@ -33,6 +34,7 @@ def is_present(my_list,  element, cmp_function):
 
     return -1
 
+
 def add_first(my_list, element):
     
     my_list["elements"].insert(0, element)
@@ -40,6 +42,7 @@ def add_first(my_list, element):
     my_list["size"] += 1
     
     return my_list
+
 
 def add_last(my_list, element):
     
@@ -49,9 +52,11 @@ def add_last(my_list, element):
     
     return my_list
 
+
 def size(my_list):
     
     return my_list["size"]
+
 
 def first_element(my_list):
     
@@ -163,5 +168,3 @@ def exchange(my_list, pos_1, pos_2):
         my_list["elements"][pos_1] = my_list["elements"][pos_2]
         my_list["elements"][pos_2] = temp
         return my_list
-     
-
