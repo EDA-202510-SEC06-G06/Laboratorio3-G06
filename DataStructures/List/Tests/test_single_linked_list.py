@@ -14,7 +14,6 @@ def compare_from_tests(element1, element2):
     return -1
 
 
-
 def test_new_list():
     lista = setup_tests()
 
@@ -24,7 +23,6 @@ def test_new_list():
     assert lista["size"] == 0
 
 
-@handle_not_implemented
 def test_add_first():
     lista = setup_tests()
 
@@ -35,7 +33,6 @@ def test_add_first():
     assert type(lista["last"]) == dict
 
 
-@handle_not_implemented
 def test_add_last():
     lista = setup_tests()
 
@@ -46,7 +43,6 @@ def test_add_last():
     assert type(lista["last"]) == dict
 
 
-@handle_not_implemented
 def test_is_empty():
     lista = setup_tests()
 
@@ -54,7 +50,6 @@ def test_is_empty():
     assert type(lt.is_empty(lista)) == bool
 
 
-@handle_not_implemented
 def test_get_size():
     lista = setup_tests()
 
@@ -62,7 +57,6 @@ def test_get_size():
     assert type(lt.size(lista)) == int
 
 
-@handle_not_implemented
 def test_get_first_element():
 
     lista = setup_tests()
@@ -75,7 +69,6 @@ def test_get_first_element():
     assert lt.first_element(lista) is not None
 
 
-@handle_not_implemented
 def test_get_last_element():
 
     lista = setup_tests()
@@ -88,7 +81,6 @@ def test_get_last_element():
     assert lt.last_element(lista) is not None
 
 
-@handle_not_implemented
 def test_get_element():
 
     lista = setup_tests()
@@ -101,7 +93,6 @@ def test_get_element():
     assert lt.get_element(lista, 0) is not None
 
 
-@handle_not_implemented
 def test_remove_first():
     lista = setup_tests()
 
@@ -113,7 +104,6 @@ def test_remove_first():
     assert type(lt.remove_first(lista)) == int
 
 
-@handle_not_implemented
 def test_remove_last():
     lista = setup_tests()
 
@@ -125,7 +115,6 @@ def test_remove_last():
     assert type(lt.remove_last(lista)) == int
 
 
-@handle_not_implemented
 def test_insert_element():
     lista = setup_tests()
 
@@ -137,7 +126,6 @@ def test_insert_element():
     assert type(lt.insert_element(lista, 2, 0)) == dict
 
 
-@handle_not_implemented
 def test_is_present():
     lista = setup_tests()
 
@@ -148,7 +136,6 @@ def test_is_present():
     assert type(lt.is_present(lista, 1, compare_from_tests)) is int
 
 
-@handle_not_implemented
 def test_delete_element():
     lista = setup_tests()
 
@@ -159,7 +146,6 @@ def test_delete_element():
     assert type(lt.delete_element(lista, 0)) == dict
 
 
-@handle_not_implemented
 def test_change_info():
     lista = setup_tests()
 
@@ -170,7 +156,6 @@ def test_change_info():
     assert lt.change_info(lista, 0, 4) is not None
 
 
-@handle_not_implemented
 def test_exchange():
     lista = setup_tests()
 
@@ -182,7 +167,6 @@ def test_exchange():
     assert lt.exchange(lista, 0, 0) is not None
 
 
-@handle_not_implemented
 def test_sub_list():
     lista = setup_tests()
 
